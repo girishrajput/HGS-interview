@@ -1,3 +1,5 @@
+import megaMenuImg from '../assets/images/mega-menu-left.png';
+
 function MegaMenu({ isMobile = false, setOpen }) {
   // We use the same hover logic here to prevent the menu from closing 
   // when the mouse is moving inside the menu area.
@@ -11,10 +13,10 @@ function MegaMenu({ isMobile = false, setOpen }) {
       onMouseLeave={() => !isMobile && setOpen(false)}
     >
       <div className={`${!isMobile ? "max-w-7xl mx-auto p-10" : ""} `}>
-        <div className="flex-wrap flex md:flex-nowrap gap-4 max-h-[360px] overflow-y-auto">
+        <div className="flex-wrap flex md:flex-nowrap gap-4 max-h-[360px] overflow-y-auto items-center">
           <div className="w-full md:w-2/5 pe-0 md:pe-8">
             <div className="pe-0 md:pe-8 py-4 md:py-0">
-              <img src="../public/mega-menu-left.png" className="w-full" alt="Mega Menu" />
+              <img src={megaMenuImg} className="w-full" alt="Mega Menu" />
             </div>
           </div>
           <div className="w-full md:w-3/5 grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-28 w-full md:w-3/5 grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-28">

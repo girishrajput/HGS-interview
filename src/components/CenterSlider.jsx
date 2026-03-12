@@ -111,13 +111,13 @@ const CenterSlider = () => {
               onClick={prev}
               className="absolute left-4 z-30 transition-all flex items-center justify-center cursor-pointer"
             >
-              <ArrowLeft />
+              <ArrowLeft className="w-8 h-8" />
             </button>
             <button
               onClick={next}
               className="absolute right-4 z-30 p-3 transition-all flex items-center justify-center cursor-pointer"
             >
-             <ArrowRight />
+             <ArrowRight className="w-8 h-8" />
             </button>
           </div>
         </div>

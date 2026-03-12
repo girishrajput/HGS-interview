@@ -1,11 +1,8 @@
 import megaMenuImg from '../assets/images/mega-menu-left.png';
 
 function MegaMenu({ isMobile = false, setOpen }) {
-  // We use the same hover logic here to prevent the menu from closing 
-  // when the mouse is moving inside the menu area.
   const desktopStyles = "absolute top-full left-0 w-full bg-white shadow-2xl border-t z-50 top-0";
   const mobileStyles = "w-full space-y-4";
-
   return (
     <div
       className={isMobile ? mobileStyles : desktopStyles}

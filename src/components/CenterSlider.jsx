@@ -1,17 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
 import { ArrowRight, ArrowLeft } from "lucide-react";
-
-
-
 import slider1 from "../assets/images/slider1.png";
 import slider2 from "../assets/images/slider2.png";
 import slider3 from "../assets/images/slider3.png";
-
 import centerSliderBg from "../assets/images/center-slider-bg.jpg";
-
-// import center-slider-bg from "../assets/images/center-slider-bg.jpg";
 
 const slides = [
   {
@@ -40,7 +33,7 @@ const CenterSlider = () => {
   const [index, setIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
-  // Math to handle infinite circular indexing
+  //  indexing
   const getIndex = (offset) => (index + offset + slides.length) % slides.length;
 
   const next = () => setIndex((prev) => (prev + 1) % slides.length);
@@ -53,7 +46,7 @@ const CenterSlider = () => {
     return () => clearInterval(interval);
   }, [index, isHovered]);
 
-  // Positions for the 3-image view
+  // 3-image view
   const displayIndexes = [getIndex(-1), getIndex(0), getIndex(1)];
 
   return (
@@ -64,7 +57,7 @@ const CenterSlider = () => {
         </h2>
         <div className="">
           <div
-            className="relative flex items-center justify-center h-[300px] md:h-[500px]"
+            className="relative flex items-center justify-center h-[300px] md:h-[420px]"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
@@ -80,21 +73,21 @@ const CenterSlider = () => {
                     onClick={() => (i === 0 ? prev() : i === 2 ? next() : null)}
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{
-                      opacity: isCenter ? 1 : 0.6,
+                      opacity: isCenter ? 1 : 1,
                       scale: isCenter ? 1.1 : 0.9,
                       zIndex: isCenter ? 20 : 10,
                     }}
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                    className={`relative cursor-pointer transition-all duration-500 ${isCenter ? "w-[280px] md:w-[400px]" : "w-[150px] md:w-[250px]"
+                    className={`relative cursor-pointer transition-all duration-500 ${isCenter ? "w-[380px] md:w-[320px]" : "w-[150px] md:w-[280px]"
                       }`}
                   >
                     <img
                       src={slide.img}
                       alt={slide.title}
-                      className="rounded-3xl shadow-2xl aspect-square object-cover"
+                      className="rounded-3xl object-cover"
                     />
 
-                    {/* Content - Only visible/expanded for center slide */}
+                    {/* center slide */}
                     <AnimatePresence>
                       {isCenter && (
                         <motion.div

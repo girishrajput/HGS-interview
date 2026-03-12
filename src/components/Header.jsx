@@ -5,8 +5,8 @@ import logo from "../assets/images/logo.png";
 import { Menu, X, ChevronDown, Search } from "lucide-react";
 
 function Header() {
-  const [open, setOpen] = useState(false); // Controls MegaMenu (Services)
-  const [mobileNavOpen, setMobileNavOpen] = useState(false); // Controls Mobile Sidebar
+  const [open, setOpen] = useState(false); //  MegaMenu 
+  const [mobileNavOpen, setMobileNavOpen] = useState(false); 
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -19,9 +19,8 @@ function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-white shadow-md" : "bg-white/60 text-black"
-      }`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-md" : "bg-white/60 text-black"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <Link to="/" className="font-bold text-xl">
@@ -37,10 +36,9 @@ function Header() {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `font-semibold hover:text-blue-600 py-4 transition-colors ${
-                isActive
-                  ? "text-blue-600 border-b-2 border-blue-600"
-                  : scrolled
+              `font-semibold hover:text-blue-600 py-4 transition-colors ${isActive
+                ? "text-blue-600 border-b-2 border-blue-600"
+                : scrolled
                   ? "text-gray-800"
                   : "text-black"
               }`
@@ -52,10 +50,9 @@ function Header() {
           <NavLink
             to="/about"
             className={({ isActive }) =>
-              `font-semibold hover:text-blue-600 py-4 transition-colors ${
-                isActive
-                  ? "text-blue-600 border-b-2 border-blue-600"
-                  : scrolled
+              `font-semibold hover:text-blue-600 py-4 transition-colors ${isActive
+                ? "text-blue-600 border-b-2 border-blue-600"
+                : scrolled
                   ? "text-gray-800"
                   : "text-black"
               }`
@@ -70,9 +67,8 @@ function Header() {
             className="static"
           >
             <span
-              className={`cursor-pointer flex items-center gap-1 font-semibold hover:text-blue-600 py-4 ${
-                scrolled ? "text-gray-800" : "text-black"
-              }`}
+              className={`cursor-pointer flex items-center gap-1 font-semibold hover:text-blue-600 py-4 ${scrolled ? "text-gray-800" : "text-black"
+                }`}
             >
               Services{" "}
               <ChevronDown
@@ -83,46 +79,37 @@ function Header() {
             {open && <MegaMenu setOpen={setOpen} />}
           </div>
 
-          <a
-            href="#"
-            className={`font-semibold hover:text-blue-600 py-4 ${
-              scrolled ? "text-gray-800" : "text-black"
-            }`}
+          <Link to="/"
+            className={`font-semibold hover:text-blue-600 py-4 ${scrolled ? "text-gray-800" : "text-black"
+              }`}
           >
             Innovations
-          </a>
-          <a
-            href="#"
-            className={`font-semibold hover:text-blue-600 py-4 ${
-              scrolled ? "text-gray-800" : "text-black"
-            }`}
+          </Link>
+          <Link to="/"
+            className={`font-semibold hover:text-blue-600 py-4 ${scrolled ? "text-gray-800" : "text-black"
+              }`}
           >
             Investors
-          </a>
-          <a
-            href="#"
-            className={`font-semibold hover:text-blue-600 py-4 ${
-              scrolled ? "text-gray-800" : "text-black"
-            }`}
+          </Link>
+          <Link to="/"
+            className={`font-semibold hover:text-blue-600 py-4 ${scrolled ? "text-gray-800" : "text-black"
+              }`}
           >
             Insights
-          </a>
-          <a
-            href="#"
-            className={`font-semibold hover:text-blue-600 py-4 ${
-              scrolled ? "text-gray-800" : "text-black"
-            }`}
+          </Link>
+          <Link to="/"
+            className={`font-semibold hover:text-blue-600 py-4 ${scrolled ? "text-gray-800" : "text-black"
+              }`}
           >
             Career
-          </a>
+          </Link>
 
           <NavLink
             to="/contact"
             className={({ isActive }) =>
-              `font-semibold hover:text-blue-600 py-4 transition-colors ${
-                isActive
-                  ? "text-blue-600 border-b-2 border-blue-600"
-                  : scrolled
+              `font-semibold hover:text-blue-600 py-4 transition-colors ${isActive
+                ? "text-blue-600 border-b-2 border-blue-600"
+                : scrolled
                   ? "text-gray-800"
                   : "text-black"
               }`
@@ -131,23 +118,20 @@ function Header() {
             Contact
           </NavLink>
 
-          <a
-            href="#"
-            className={`font-semibold hover:text-blue-600 py-4 ${
-              scrolled ? "text-gray-800" : "text-black"
-            }`}
+          <Link to="/"
+            className={`font-semibold hover:text-blue-600 py-4 ${scrolled ? "text-gray-800" : "text-black"
+              }`}
           >
             <Search />
-          </a>
+          </Link>
         </nav>
 
         {/* --- MOBILE TOGGLE BUTTON --- */}
         <span className="flex gap-2 items-center md:hidden">
           <Search />
           <button
-            className={`md:hidden p-2 ${
-              scrolled ? "text-gray-700" : "text-black"
-            }`}
+            className={`md:hidden p-2 ${scrolled ? "text-gray-700" : "text-black"
+              }`}
             onClick={() => setMobileNavOpen(!mobileNavOpen)}
           >
             {mobileNavOpen ? <X size={28} /> : <Menu size={28} />}
@@ -162,8 +146,7 @@ function Header() {
             to="/"
             onClick={() => setMobileNavOpen(false)}
             className={({ isActive }) =>
-              `text-lg font-semibold border-b py-2 transition-colors ${
-                isActive ? "text-blue-600" : "hover:text-blue-600"
+              `text-lg font-semibold border-b py-2 transition-colors ${isActive ? "text-blue-600" : "hover:text-blue-600"
               }`
             }
           >
@@ -174,8 +157,7 @@ function Header() {
             to="/about"
             onClick={() => setMobileNavOpen(false)}
             className={({ isActive }) =>
-              `text-lg font-semibold border-b py-2 transition-colors ${
-                isActive ? "text-blue-600" : "hover:text-blue-600"
+              `text-lg font-semibold border-b py-2 transition-colors ${isActive ? "text-blue-600" : "hover:text-blue-600"
               }`
             }
           >
@@ -202,37 +184,32 @@ function Header() {
             )}
           </div>
 
-          <a
-            href="#"
+          <Link to="/"
             className="text-lg font-semibold border-b hover:text-blue-600 py-2"
           >
             Innovations
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link to="/"
             className="text-lg font-semibold border-b hover:text-blue-600 py-2"
           >
             Investors
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link to="/"
             className="text-lg font-semibold border-b hover:text-blue-600 py-2"
           >
             Insights
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link to="/"
             className="text-lg font-semibold border-b hover:text-blue-600 py-2"
           >
             Career
-          </a>
+          </Link>
 
           <NavLink
             to="/contact"
             onClick={() => setMobileNavOpen(false)}
             className={({ isActive }) =>
-              `text-lg font-semibold border-b py-2 transition-colors ${
-                isActive ? "text-blue-600" : "hover:text-blue-600"
+              `text-lg font-semibold border-b py-2 transition-colors ${isActive ? "text-blue-600" : "hover:text-blue-600"
               }`
             }
           >

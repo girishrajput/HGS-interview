@@ -3,7 +3,7 @@ import aboutImg from "../assets/images/about-img.png";
 
 function ContentSection() {
   return (
-    <section className="max-w-7xl mx-auto py-16 px-6 grid md:grid-cols-3 gap-10 items-center">
+    <section className="max-w-7xl mx-auto py-24 px-6 grid md:grid-cols-3 gap-10 items-center">
       <div className="flex gap-4 flex-wrap">
         <h2 className="text-5xl font-semibold mb-4 leading-14">
           Sed ut unde

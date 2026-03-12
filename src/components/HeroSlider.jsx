@@ -56,7 +56,7 @@ function HeroSlider() {
           {currentSlide.subtitle}
         </p>
 
-        <button className="bg-white font-normal text-[#02033a] px-10 py-2 rounded-full hover:bg-gray-200 transition-colors shadow-lg cursor-pointer">
+        <button className="bg-white font-normal text-[#02033a] px-10 py-2 rounded-full hover:bg-gray-200 transition-colors cursor-pointer">
           {currentSlide.buttonText}
         </button>
       </div>

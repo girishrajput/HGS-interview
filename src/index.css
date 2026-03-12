@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-teal: #1db497;
+  --color-dark-blue: #101d8b;
+  --color-dark-blue-footer: #2f5e93;
+  --color-custom-dark: #171918;
+}
+
+@font-face {
+  font-family: "pp-mori";
+  src: url("./assets/fonts/PPMori-Regular.woff2") format("woff2"),
+       url("./assets/fonts/PPMori-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "pp-mori";
+  src: url("./assets/fonts/ppmori-semibold-webfont.woff2") format("woff2"),
+       url("./assets/fonts/ppmori-semibold-webfont.woff") format("woff");
+  font-weight: 600;
+}
+
+body {
+  font-family: "pp-mori", sans-serif;
+}

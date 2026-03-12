@@ -1,0 +1,104 @@
+import { useState, useEffect } from "react";
+import MegaMenu from "./MegaMenu";
+import logo from "../assets/images/logo.png";
+import { Menu, X, ChevronDown, Search } from "lucide-react";
+
+function Header() {
+  const [open, setOpen] = useState(false); // Controls MegaMenu (Services)
+  const [mobileNavOpen, setMobileNavOpen] = useState(false); // Controls Mobile Sidebar
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-md" : "bg-white/60 text-black"
+        }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+
+        <a href="#" className="font-bold text-xl">
+          <img
+            src={logo}
+            alt="Logo"
+            className={`h-8 transition-all ${!scrolled && " "}`}
+          />
+        </a>
+
+        {/* --- DESKTOP NAV --- */}
+        <nav className="hidden md:flex gap-8 items-center">
+          <a href="#" className={`font-semibold hover:text-blue-600 py-4 ${scrolled ? "text-gray-800" : "text-black"}`}>Home</a>
+          <a href="#" className={`font-semibold hover:text-blue-600 py-4 ${scrolled ? "text-gray-800" : "text-black"}`}>About</a>
+
+          <div
+            onMouseEnter={() => setOpen(true)}
+            onMouseLeave={() => setOpen(false)}
+            className="static"
+          >
+            <span className={`cursor-pointer flex items-center gap-1 font-semibold hover:text-blue-600 py-4 ${scrolled ? "text-gray-800" : "text-black"}`}>
+              Services <ChevronDown size={16} className={open ? "rotate-180 transition-transform" : ""} />
+            </span>
+            {open && <MegaMenu setOpen={setOpen} />}
+          </div>
+
+          <a href="#" className={`font-semibold hover:text-blue-600 py-4 ${scrolled ? "text-gray-800" : "text-black"}`}>Innovations</a>
+          <a href="#" className={`font-semibold hover:text-blue-600 py-4 ${scrolled ? "text-gray-800" : "text-black"}`}>Investors</a>
+          <a href="#" className={`font-semibold hover:text-blue-600 py-4 ${scrolled ? "text-gray-800" : "text-black"}`}>Insights</a>
+          <a href="#" className={`font-semibold hover:text-blue-600 py-4 ${scrolled ? "text-gray-800" : "text-black"}`}>Career</a>
+          <a href="#" className={`font-semibold hover:text-blue-600 py-4 ${scrolled ? "text-gray-800" : "text-black"}`}>Contact</a>
+          <a href="#" className={`font-semibold hover:text-blue-600 py-4 ${scrolled ? "text-gray-800" : "text-black"}`}><Search /></a>
+        </nav>
+        {/* --- MOBILE TOGGLE BUTTON --- */}
+        <span className=" flex gap-2 items-center md:hidden">
+          <Search />
+          <button
+            className={`md:hidden p-2 ${scrolled ? "text-gray-700" : "text-black"}`}
+            onClick={() => setMobileNavOpen(!mobileNavOpen)}
+          >
+
+            {mobileNavOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </span>
+
+      </div>
+
+      {/* --- MOBILE MENU PANEL --- */}
+      {mobileNavOpen && (
+        <div className="md:hidden bg-white text-gray-900 border-t border-gray-100 shadow-xl absolute top-full left-0 w-full p-6 flex flex-col gap-0 animate-in slide-in-from-top-2 duration-300">
+          <a href="#" className="text-lg font-semibold border-b  hover:text-blue-600 py-2">Home</a>
+          <a href="#" className="text-lg font-semibold border-b  hover:text-blue-600 py-2">About</a>
+
+          <div className="flex flex-col">
+            <button
+              onClick={() => setOpen(!open)}
+              className="flex justify-between items-center text-lg font-semibold border-b  hover:text-blue-600 py-2"
+            >
+              Services <ChevronDown size={20} className={open ? "rotate-180" : ""} />
+            </button>
+
+            {/* MegaMenu for Mobile */}
+            {open && (
+              <div className="bg-gray-50 rounded-lg mt-2 overflow-hidden">
+                <MegaMenu isMobile={true} setOpen={setOpen} />
+              </div>
+            )}
+          </div>
+
+          <a href="#" className="text-lg font-semibold border-b  hover:text-blue-600 py-2">Innovations</a>
+          <a href="#" className="text-lg font-semibold border-b  hover:text-blue-600 py-2">Investors</a>
+          <a href="#" className="text-lg font-semibold border-b  hover:text-blue-600 py-2">Insights</a>
+          <a href="#" className="text-lg font-semibold border-b  hover:text-blue-600 py-2">Career</a>
+          <a href="#" className="text-lg font-semibold border-b  hover:text-blue-600 py-2">Contact</a>
+        </div>
+      )}
+    </header>
+  );
+}
+
+export default Header;

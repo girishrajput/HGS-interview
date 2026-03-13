@@ -11,10 +11,10 @@ function ContentSection() {
           <span className="text-brand-teal block"> perspiciatis </span>
           omnis iste natus
         </h2>
-        <p className="text-custom-dark mb-4 font-normal">
+        <p className="text-custom-dark mb-4 font-normal pe-8">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
-        <p className="text-custom-dark mb-4 font-normal">
+        <p className="text-custom-dark mb-4 font-normal pe-8">
           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.
         </p>
         <button className="bg-dark-blue text-white px-8 py-1 rounded-full hover:bg-brand-teal transition-colors cursor-pointer md:mt-5">

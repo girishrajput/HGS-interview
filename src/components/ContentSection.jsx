@@ -1,6 +1,7 @@
 import { Zap, TrendingUp, Award, Users } from "lucide-react";
 import aboutImg from "../assets/images/about-img.png";
 import statistics from "../data/statistics.json";
+import { Link } from "react-router-dom";
 
 function ContentSection() {
   return (
@@ -17,9 +18,10 @@ function ContentSection() {
         <p className="text-custom-dark mb-4 font-normal pe-8">
           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.
         </p>
-        <button className="bg-dark-blue text-white px-8 py-1 rounded-full hover:bg-brand-teal transition-colors cursor-pointer md:mt-5">
+
+        <Link to="/about" className="bg-dark-blue text-white px-8 py-1 rounded-full hover:bg-brand-teal transition-colors cursor-pointer md:mt-5">
           Read More
-        </button>
+        </Link>
       </div>
 
       <div className="flex p-0 md:p-6">

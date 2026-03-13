@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import slider1 from "../assets/images/banner-main.jpg";
 import slider2 from "../assets/images/banner-main1.jpg";
 import slider3 from "../assets/images/banner-main2.jpg";
@@ -42,9 +43,10 @@ function HeroSlider() {
           {currentSlide.subtitle}
         </p>
 
-        <button className="bg-white md:ml-[50px] font-normal text-[#02033a] px-7 py-1.5 rounded-full hover:bg-gray-200 transition-colors cursor-pointer">
+        <Link to="/about" className="bg-white md:ml-[50px] font-normal text-[#02033a] px-7 py-1.5 rounded-full hover:bg-gray-200 transition-colors cursor-pointer">
           {currentSlide.buttonText}
-        </button>
+        </Link>
+
       </div>
 
       {/* --- Navigation --- */}

@@ -19,7 +19,7 @@ function ContentSection() {
           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.
         </p>
 
-        <Link to="/about" className="bg-dark-blue text-white px-8 py-1 rounded-full hover:bg-brand-teal transition-colors cursor-pointer md:mt-5">
+        <Link to="/about" className="bg-dark-blue text-white px-8 py-2.5 rounded-full hover:bg-brand-teal transition-colors cursor-pointer md:mt-5">
           Read More
         </Link>
       </div>

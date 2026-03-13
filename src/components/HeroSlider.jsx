@@ -43,7 +43,7 @@ function HeroSlider() {
           {currentSlide.subtitle}
         </p>
 
-        <Link to="/about" className="bg-white md:ml-[50px] font-normal text-[#02033a] px-7 py-1.5 rounded-full hover:bg-gray-200 transition-colors cursor-pointer">
+        <Link to="/about" className="bg-white md:ml-[50px] font-normal text-[#02033a] px-7 py-2.5 rounded-full hover:bg-gray-200 transition-colors cursor-pointer">
           {currentSlide.buttonText}
         </Link>
 

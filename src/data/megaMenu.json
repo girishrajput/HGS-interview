@@ -1,0 +1,79 @@
+{
+  "categories": [
+    {
+      "title": "Title 1",
+      "items": [
+        {
+          "label": "Lorem ipsum",
+          "url": "#"
+        },
+        {
+          "label": "Dolor sit",
+          "url": "#"
+        },
+        {
+          "label": "En daus tret",
+          "url": "#"
+        },
+        {
+          "label": "perspiciatis unde",
+          "url": "#"
+        },
+        {
+          "label": "et quasi architecto",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "title": "Title 2",
+      "items": [
+        {
+          "label": "Lorem ipsum",
+          "url": "#"
+        },
+        {
+          "label": "Dolor sit",
+          "url": "#"
+        },
+        {
+          "label": "En daus tret",
+          "url": "#"
+        },
+        {
+          "label": "perspiciatis unde",
+          "url": "#"
+        },
+        {
+          "label": "et quasi architecto",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "title": "Title 3",
+      "items": [
+        {
+          "label": "Lorem ipsum",
+          "url": "#"
+        },
+        {
+          "label": "Dolor sit",
+          "url": "#"
+        },
+        {
+          "label": "En daus tret",
+          "url": "#"
+        },
+        {
+          "label": "perspiciatis unde",
+          "url": "#"
+        },
+        {
+          "label": "et quasi architecto",
+          "url": "#"
+        }
+      ]
+    }
+  ]
+}

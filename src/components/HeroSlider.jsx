@@ -2,29 +2,15 @@ import { useState, useEffect } from "react";
 import slider1 from "../assets/images/banner-main.jpg";
 import slider2 from "../assets/images/banner-main1.jpg";
 import slider3 from "../assets/images/banner-main2.jpg";
-
-const slidesData = [
-  {
-    image: slider1,
-    title: "LOREM",
-    subtitle: "IPSUM TITLE",
-    buttonText: "Explore"
-  },
-  {
-    image: slider2,
-    title: "LOREM 2",
-    subtitle: "IPSUM TITLE 2",
-    buttonText: "Explore"
-  },
-  {
-    image: slider3,
-    title: "LOREM 3",
-    subtitle: "IPSUM TITLE 3",
-    buttonText: "Explore"
-  }
-];
+import heroSlides from "../data/heroSlides.json";
 
 function HeroSlider() {
+  // Map imported images to slides data
+  const slidesData = heroSlides.map((slide, index) => ({
+    ...slide,
+    image: [slider1, slider2, slider3][index]
+  }));
+
   const [index, setIndex] = useState(0);
 
   // Auto-slide logic

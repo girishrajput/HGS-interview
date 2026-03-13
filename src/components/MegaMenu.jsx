@@ -1,4 +1,5 @@
 import megaMenuImg from '../assets/images/mega-menu-left.png';
+import megaMenuData from '../data/megaMenu.json';
 
 function MegaMenu({ isMobile = false, setOpen }) {
   const desktopStyles = "absolute top-full left-0 w-full bg-white shadow-2xl border-t z-50 top-0";
@@ -17,38 +18,18 @@ function MegaMenu({ isMobile = false, setOpen }) {
             </div>
           </div>
           <div className="w-full md:w-3/5 grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-28 w-full md:w-3/5 grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-28">
-            <div>
-              <h4 className="font-semibold text-black mb-4">Title 1</h4>
-              <ul className="space-y-3 text-sm">
-                <li className="font-normal hover:text-blue-600 cursor-pointer">Lorem ipsum</li>
-                <li className="font-normal hover:text-blue-600 cursor-pointer">Dolor sit</li>
-                <li className="font-normal hover:text-blue-600 cursor-pointer">En daus tret</li>
-                <li className="font-normal hover:text-blue-600 cursor-pointer">perspiciatis unde</li>
-                <li className="font-normal hover:text-blue-600 cursor-pointer">et quasi architecto</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold text-black mb-4">Title 2</h4>
-              <ul className="space-y-3 text-sm">
-                <li className="font-normal hover:text-blue-600 cursor-pointer">Lorem ipsum</li>
-                <li className="font-normal hover:text-blue-600 cursor-pointer">Dolor sit</li>
-                <li className="font-normal hover:text-blue-600 cursor-pointer">En daus tret</li>
-                <li className="font-normal hover:text-blue-600 cursor-pointer">perspiciatis unde</li>
-                <li className="font-normal hover:text-blue-600 cursor-pointer">et quasi architecto</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold text-black mb-4">Title 3</h4>
-              <ul className="space-y-3 text-sm">
-                <li className="font-normal hover:text-blue-600 cursor-pointer">Lorem ipsum</li>
-                <li className="font-normal hover:text-blue-600 cursor-pointer">Dolor sit</li>
-                <li className="font-normal hover:text-blue-600 cursor-pointer">En daus tret</li>
-                <li className="font-normal hover:text-blue-600 cursor-pointer">perspiciatis unde</li>
-                <li className="font-normal hover:text-blue-600 cursor-pointer">et quasi architecto</li>
-              </ul>
-            </div>
+            {megaMenuData.categories.map((category, index) => (
+              <div key={index}>
+                <h4 className="font-semibold text-black mb-4">{category.title}</h4>
+                <ul className="space-y-3 text-sm">
+                  {category.items.map((item, itemIndex) => (
+                    <li key={itemIndex} className="font-normal hover:text-blue-600 cursor-pointer">
+                      {item.label}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </div>

@@ -5,41 +5,25 @@ import slider1 from "../assets/images/slider1.png";
 import slider2 from "../assets/images/slider2.png";
 import slider3 from "../assets/images/slider3.png";
 import centerSliderBg from "../assets/images/center-slider-bg.jpg";
-
-const slides = [
-  {
-    id: 1,
-    title: "Lorem ipsum",
-    img: slider1,
-  },
-  {
-    id: 2,
-    title: "Lorem ipsum 1",
-    img: slider2,
-  },
-  {
-    id: 3,
-    title: "Lorem ipsum 2",
-    img: slider3,
-  },
-  {
-    id: 4,
-    title: "Lorem ipsum 3",
-    img: "https://picsum.photos/id/40/800/800",
-  },
-];
+import centerSlides from "../data/centerSlides.json";
 
 const CenterSlider = () => {
   const [index, setIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
+  // Map 
+  const slides = centerSlides.map((slide, index) => ({
+    ...slide,
+    img: [slider1, slider2, slider3, "https://picsum.photos/id/40/800/800"][index]
+  }));
+
   //  indexing
-  const getIndex = (offset) => (index + offset + slides.length) % slides.length;
+  const getIndex = (offset) => (index + offset + centerSlides.length) % centerSlides.length;
 
-  const next = () => setIndex((prev) => (prev + 1) % slides.length);
-  const prev = () => setIndex((prev) => (prev - 1 + slides.length) % slides.length);
+  const next = () => setIndex((prev) => (prev + 1) % centerSlides.length);
+  const prev = () => setIndex((prev) => (prev - 1 + centerSlides.length) % centerSlides.length);
 
-  // Autoplay Logic
+  //  Logic
   useEffect(() => {
     if (isHovered) return;
     const interval = setInterval(next, 4000);
@@ -57,11 +41,11 @@ const CenterSlider = () => {
         </h2>
         <div className="">
           <div
-            className="relative flex items-center justify-center h-[300px] md:h-[400px]"
+            className="relative flex items-center justify-center h-[370px] md:h-[400px]"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            {/* Slider Container */}
+            {/* Container */}
             <div className="flex items-center min-h-6/12 justify-center w-full gap-5 md:gap-5">
               {displayIndexes.map((slideIdx, i) => {
                 const isCenter = i === 1;
@@ -106,7 +90,7 @@ const CenterSlider = () => {
               })}
             </div>
 
-            {/* Navigation Arrows */}
+            {/* Arrows */}
             <button
               onClick={prev}
               className="absolute left-4 z-30 transition-all flex items-center justify-center cursor-pointer"

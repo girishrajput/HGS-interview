@@ -1,0 +1,22 @@
+[
+  {
+    "icon": "Zap",
+    "value": "20%",
+    "label": "Lorem ipsum"
+  },
+  {
+    "icon": "TrendingUp",
+    "value": "1.2M",
+    "label": "dolor sit"
+  },
+  {
+    "icon": "Award",
+    "value": "15+",
+    "label": "awards"
+  },
+  {
+    "icon": "Users",
+    "value": "50+",
+    "label": "clients"
+  }
+]

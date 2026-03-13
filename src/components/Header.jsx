@@ -79,30 +79,34 @@ function Header() {
             {open && <MegaMenu setOpen={setOpen} />}
           </div>
 
-          <Link to="/"
-            className={`font-semibold hover:text-blue-600 py-4 ${scrolled ? "text-gray-800" : "text-black"
+          <span
+            className={`cursor-pointer font-semibold hover:text-blue-600 py-4 ${scrolled ? "text-gray-800" : "text-black"
               }`}
+            onClick={() => {}}
           >
             Innovations
-          </Link>
-          <Link to="/"
-            className={`font-semibold hover:text-blue-600 py-4 ${scrolled ? "text-gray-800" : "text-black"
+          </span>
+          <span
+            className={`cursor-pointer font-semibold hover:text-blue-600 py-4 ${scrolled ? "text-gray-800" : "text-black"
               }`}
+            onClick={() => {}}
           >
             Investors
-          </Link>
-          <Link to="/"
-            className={`font-semibold hover:text-blue-600 py-4 ${scrolled ? "text-gray-800" : "text-black"
+          </span>
+          <span
+            className={`cursor-pointer font-semibold hover:text-blue-600 py-4 ${scrolled ? "text-gray-800" : "text-black"
               }`}
+            onClick={() => {}}
           >
             Insights
-          </Link>
-          <Link to="/"
-            className={`font-semibold hover:text-blue-600 py-4 ${scrolled ? "text-gray-800" : "text-black"
+          </span>
+          <span
+            className={`cursor-pointer font-semibold hover:text-blue-600 py-4 ${scrolled ? "text-gray-800" : "text-black"
               }`}
+            onClick={() => {}}
           >
             Career
-          </Link>
+          </span>
 
           <NavLink
             to="/contact"
@@ -118,7 +122,7 @@ function Header() {
             Contact
           </NavLink>
 
-          <Link to="/Search"
+          <Link to="/search"
             className={`font-semibold hover:text-blue-600 py-4 ${scrolled ? "text-gray-800" : "text-black"
               }`}
           >
@@ -126,9 +130,9 @@ function Header() {
           </Link>
         </nav>
 
-        {/* --- MOBILE TOGGLE BUTTON --- */}
+        {/* --- MOBILE  --- */}
         <span className="flex gap-2 items-center md:hidden">
-          <Link to="/Search"><Search /></Link>
+          <Link to="/search"><Search /></Link>
           <button
             className={`md:hidden p-2 ${scrolled ? "text-gray-700" : "text-black"
               }`}
@@ -139,82 +143,88 @@ function Header() {
         </span>
       </div>
 
-      {/* --- MOBILE MENU PANEL --- */}
+      {/* --- MOBILE --- */}
       {mobileNavOpen && (
-        <div className="md:hidden bg-white text-gray-900 border-t border-gray-100 shadow-xl absolute top-full left-0 w-full p-6 flex flex-col gap-0 animate-in slide-in-from-top-2 duration-300">
-          <NavLink
-            to="/"
-            onClick={() => setMobileNavOpen(false)}
-            className={({ isActive }) =>
-              `text-lg font-semibold border-b py-2 transition-colors ${isActive ? "text-blue-600" : "hover:text-blue-600"
-              }`
-            }
-          >
-            Home
-          </NavLink>
-
-          <NavLink
-            to="/about"
-            onClick={() => setMobileNavOpen(false)}
-            className={({ isActive }) =>
-              `text-lg font-semibold border-b py-2 transition-colors ${isActive ? "text-blue-600" : "hover:text-blue-600"
-              }`
-            }
-          >
-            About
-          </NavLink>
-
-          <div className="flex flex-col">
-            <button
-              onClick={() => setOpen(!open)}
-              className="flex justify-between items-center text-lg font-semibold border-b hover:text-blue-600 py-2"
+        <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t">
+          <div className="flex flex-col px-6 py-4 space-y-2">
+            <NavLink
+              to="/"
+              onClick={() => setMobileNavOpen(false)}
+              className={({ isActive }) =>
+                `text-lg font-semibold border-b py-2 transition-colors ${isActive ? "text-blue-600" : "hover:text-blue-600"
+                }`
+              }
             >
-              Services{" "}
-              <ChevronDown
-                size={20}
-                className={open ? "rotate-180" : ""}
-              />
-            </button>
+              Home
+            </NavLink>
 
-            {/* MegaMenu for Mobile */}
-            {open && (
-              <div className="bg-gray-50 rounded-lg mt-2 overflow-hidden">
-                <MegaMenu isMobile={true} setOpen={setOpen} />
-              </div>
-            )}
+            <NavLink
+              to="/about"
+              onClick={() => setMobileNavOpen(false)}
+              className={({ isActive }) =>
+                `text-lg font-semibold border-b py-2 transition-colors ${isActive ? "text-blue-600" : "hover:text-blue-600"
+                }`
+              }
+            >
+              About
+            </NavLink>
+
+            <div className="flex flex-col">
+              <button
+                onClick={() => setOpen(!open)}
+                className="flex justify-between items-center text-lg font-semibold border-b hover:text-blue-600 py-2"
+              >
+                Services{" "}
+                <ChevronDown
+                  size={20}
+                  className={open ? "rotate-180" : ""}
+                />
+              </button>
+
+              {/* Mobile */}
+              {open && (
+                <div className="bg-gray-50 rounded-lg mt-2 overflow-hidden">
+                  <MegaMenu isMobile={true} setOpen={setOpen} />
+                </div>
+              )}
+            </div>
+
+            <span
+              className="text-lg font-semibold border-b hover:text-blue-600 py-2 cursor-pointer"
+              onClick={() => {}}
+            >
+              Innovations
+            </span>
+            <span
+              className="text-lg font-semibold border-b hover:text-blue-600 py-2 cursor-pointer"
+              onClick={() => {}}
+            >
+              Investors
+            </span>
+            <span
+              className="text-lg font-semibold border-b hover:text-blue-600 py-2 cursor-pointer"
+              onClick={() => {}}
+            >
+              Insights
+            </span>
+            <span
+              className="text-lg font-semibold border-b hover:text-blue-600 py-2 cursor-pointer"
+              onClick={() => {}}
+            >
+              Career
+            </span>
+
+            <NavLink
+              to="/contact"
+              onClick={() => setMobileNavOpen(false)}
+              className={({ isActive }) =>
+                `text-lg font-semibold border-b py-2 transition-colors ${isActive ? "text-blue-600" : "hover:text-blue-600"
+                }`
+              }
+            >
+              Contact
+            </NavLink>
           </div>
-
-          <Link to="/"
-            className="text-lg font-semibold border-b hover:text-blue-600 py-2"
-          >
-            Innovations
-          </Link>
-          <Link to="/"
-            className="text-lg font-semibold border-b hover:text-blue-600 py-2"
-          >
-            Investors
-          </Link>
-          <Link to="/"
-            className="text-lg font-semibold border-b hover:text-blue-600 py-2"
-          >
-            Insights
-          </Link>
-          <Link to="/"
-            className="text-lg font-semibold border-b hover:text-blue-600 py-2"
-          >
-            Career
-          </Link>
-
-          <NavLink
-            to="/contact"
-            onClick={() => setMobileNavOpen(false)}
-            className={({ isActive }) =>
-              `text-lg font-semibold border-b py-2 transition-colors ${isActive ? "text-blue-600" : "hover:text-blue-600"
-              }`
-            }
-          >
-            Contact
-          </NavLink>
         </div>
       )}
     </header>

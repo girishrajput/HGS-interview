@@ -1,5 +1,6 @@
 import { Zap, TrendingUp, Award, Users } from "lucide-react";
 import aboutImg from "../assets/images/about-img.png";
+import statistics from "../data/statistics.json";
 
 function ContentSection() {
   return (
@@ -29,34 +30,18 @@ function ContentSection() {
         />
       </div>
       <div className="grid grid-cols-2 gap-10 text-center">
-        <div className="flex gap-4 flex-wrap items-center justify-center">
-          <div className="flex items-center justify-center size-16 bg-brand-teal rounded-full m-auto">
-            <Zap className="mx-auto text-white" size={32} />
-          </div>
-          <h3 className="text-5xl font-semibold w-full">20%</h3>
-          <p className="font-normal -mt-4">Lorem ipsum</p>
-        </div>
-        <div className="flex gap-4 flex-wrap items-center justify-center">
-          <div className="flex items-center justify-center size-16 bg-brand-teal rounded-full m-auto">
-            <TrendingUp className="mx-auto text-white" size={32} />
-          </div>
-          <h3 className="text-5xl font-semibold w-full">1.2M</h3>
-          <p className="font-normal -mt-4">dolor sit</p>
-        </div>
-        <div className="flex gap-4 flex-wrap items-center justify-center">
-          <div className="flex items-center justify-center size-16 bg-brand-teal rounded-full m-auto">
-            <Award className="mx-auto text-white" size={32} />
-          </div>
-          <h3 className="text-5xl font-semibold w-full">15+</h3>
-          <p className="font-normal -mt-4">awards</p>
-        </div>
-        <div className="flex gap-4 flex-wrap items-center justify-center">
-          <div className="flex items-center justify-center size-16 bg-brand-teal rounded-full m-auto">
-            <Users className="mx-auto text-white" size={32} />
-          </div>
-          <h3 className="text-5xl font-semibold w-full">50+</h3>
-          <p className="font-normal -mt-4">clients</p>
-        </div>
+        {statistics.map((stat, index) => {
+          const IconComponent = { Zap, TrendingUp, Award, Users }[stat.icon];
+          return (
+            <div key={index} className="flex gap-4 flex-wrap items-center justify-center">
+              <div className="flex items-center justify-center size-16 bg-brand-teal rounded-full m-auto">
+                <IconComponent className="mx-auto text-white" size={32} />
+              </div>
+              <h3 className="text-5xl font-semibold w-full">{stat.value}</h3>
+              <p className="font-normal -mt-4">{stat.label}</p>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

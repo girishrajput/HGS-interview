@@ -1,0 +1,37 @@
+[
+  {
+    "label": "Home",
+    "path": "/",
+    "isDropdown": false
+  },
+  {
+    "label": "About",
+    "path": "/about",
+    "isDropdown": false
+  },
+  {
+    "label": "Services",
+    "path": "#",
+    "isDropdown": true
+  },
+  {
+    "label": "Innovations",
+    "path": "/innovations",
+    "isDropdown": false
+  },
+  {
+    "label": "Investors",
+    "path": "/investors",
+    "isDropdown": false
+  },
+  {
+    "label": "Insights",
+    "path": "/insights",
+    "isDropdown": false
+  },
+  {
+    "label": "Contact",
+    "path": "/contact",
+    "isDropdown": false
+  }
+]

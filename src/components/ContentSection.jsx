@@ -17,7 +17,7 @@ function ContentSection() {
         <p className="text-custom-dark mb-4 font-normal">
           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.
         </p>
-        <button className="bg-dark-blue text-white px-10 py-2 rounded-full hover:bg-brand-teal transition-colors cursor-pointer">
+        <button className="bg-dark-blue text-white px-8 py-1 rounded-full hover:bg-brand-teal transition-colors cursor-pointer md:mt-5">
           Read More
         </button>
       </div>

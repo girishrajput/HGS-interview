@@ -27,17 +27,17 @@ function Header() {
           <img
             src={logo}
             alt="Logo"
-            className={`h-8 transition-all ${!scrolled && " "}`}
+            className={`h-10 transition-all ${!scrolled && " "}`}
           />
         </Link>
 
         {/* --- DESKTOP NAV --- */}
-        <nav className="hidden md:flex gap-8 items-center">
+        <nav className="hidden md:flex gap-6 items-center">
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `font-semibold hover:text-blue-600 py-4 transition-colors ${isActive
-                ? "text-blue-600 border-b-2 border-blue-600"
+              `font-semibold hover:text-blue-600 py-6 transition-colors ${isActive
+                ? "text-blue-600 border-b-0 border-blue-600"
                 : scrolled
                   ? "text-gray-800"
                   : "text-black"
@@ -50,8 +50,8 @@ function Header() {
           <NavLink
             to="/about"
             className={({ isActive }) =>
-              `font-semibold hover:text-blue-600 py-4 transition-colors ${isActive
-                ? "text-blue-600 border-b-2 border-blue-600"
+              `font-semibold hover:text-blue-600 py-6 transition-colors ${isActive
+                ? "text-blue-600 border-b-0 border-blue-600"
                 : scrolled
                   ? "text-gray-800"
                   : "text-black"
@@ -67,7 +67,7 @@ function Header() {
             className="static"
           >
             <span
-              className={`cursor-pointer flex items-center gap-1 font-semibold hover:text-blue-600 py-4 ${scrolled ? "text-gray-800" : "text-black"
+              className={`cursor-pointer flex items-center gap-1 font-semibold hover:text-blue-600 py-6 ${scrolled ? "text-gray-800" : "text-black"
                 }`}
             >
               Services{" "}
@@ -80,28 +80,28 @@ function Header() {
           </div>
 
           <span
-            className={`cursor-pointer font-semibold hover:text-blue-600 py-4 ${scrolled ? "text-gray-800" : "text-black"
+            className={`cursor-pointer font-semibold hover:text-blue-600 py-6 ${scrolled ? "text-gray-800" : "text-black"
               }`}
             onClick={() => {}}
           >
             Innovations
           </span>
           <span
-            className={`cursor-pointer font-semibold hover:text-blue-600 py-4 ${scrolled ? "text-gray-800" : "text-black"
+            className={`cursor-pointer font-semibold hover:text-blue-600 py-6 ${scrolled ? "text-gray-800" : "text-black"
               }`}
             onClick={() => {}}
           >
             Investors
           </span>
           <span
-            className={`cursor-pointer font-semibold hover:text-blue-600 py-4 ${scrolled ? "text-gray-800" : "text-black"
+            className={`cursor-pointer font-semibold hover:text-blue-600 py-6 ${scrolled ? "text-gray-800" : "text-black"
               }`}
             onClick={() => {}}
           >
             Insights
           </span>
           <span
-            className={`cursor-pointer font-semibold hover:text-blue-600 py-4 ${scrolled ? "text-gray-800" : "text-black"
+            className={`cursor-pointer font-semibold hover:text-blue-600 py-6 ${scrolled ? "text-gray-800" : "text-black"
               }`}
             onClick={() => {}}
           >
@@ -111,8 +111,8 @@ function Header() {
           <NavLink
             to="/contact"
             className={({ isActive }) =>
-              `font-semibold hover:text-blue-600 py-4 transition-colors ${isActive
-                ? "text-blue-600 border-b-2 border-blue-600"
+              `font-semibold hover:text-blue-600 py-6 transition-colors ${isActive
+                ? "text-blue-600 border-b-0 border-blue-600"
                 : scrolled
                   ? "text-gray-800"
                   : "text-black"
@@ -123,7 +123,7 @@ function Header() {
           </NavLink>
 
           <Link to="/search"
-            className={`font-semibold hover:text-blue-600 py-4 ${scrolled ? "text-gray-800" : "text-black"
+            className={`font-semibold hover:text-blue-600 py-6 ${scrolled ? "text-gray-800" : "text-black"
               }`}
           >
             <Search />

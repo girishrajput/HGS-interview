@@ -7,6 +7,9 @@ import slider3 from "../assets/images/slider3.png";
 import centerSliderBg from "../assets/images/center-slider-bg.jpg";
 import centerSlides from "../data/centerSlides.json";
 
+import ArrowR from "../assets/images/right-aerrow.svg";
+import ArrowL from "../assets/images/left-aerrow.svg";
+
 const CenterSlider = () => {
   const [index, setIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
@@ -39,9 +42,9 @@ const CenterSlider = () => {
         <h2 className="text-4xl sm:text-5xl font-semibold text-center mb-4 md:mb-16 text-custom-dark font-mori">
           Lorem ipsum dolor
         </h2>
-        <div className="">
+   
           <div
-            className="relative flex items-center justify-center h-[370px] md:h-[400px]"
+            className="relative flex items-center justify-center h-[300px] md:h-[400px]"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
@@ -94,17 +97,16 @@ const CenterSlider = () => {
             <button
               onClick={prev}
               className="absolute left-4 z-30 transition-all flex items-center justify-center cursor-pointer"
-            >
-              <ArrowLeft className="w-auto h-9" />
+            >           
+              <img src={ArrowL} alt="Previous" className="w-auto h-6" />
             </button>
             <button
               onClick={next}
               className="absolute right-4 z-30 p-3 transition-all flex items-center justify-center cursor-pointer"
             >
-             <ArrowRight className="w-auto h-9" />
+             <img src={ArrowR} alt="Previous" className="w-auto h-6" />
             </button>
           </div>
-        </div>
       </div>
     </section>
   );

@@ -27,7 +27,7 @@ function HeroSlider() {
 
   return (
     <section
-      className="h-[500px] bg-cover bg-center flex items-center relative transition-all duration-1000 ease-in-out"
+      className="h-[560px] bg-cover bg-center flex items-center relative transition-all duration-1000 ease-in-out"
       style={{ backgroundImage: `url(${currentSlide.image})` }}
     >
       {/* Overlay */}
@@ -35,25 +35,25 @@ function HeroSlider() {
 
       <div className="relative z-10 w-full max-w-7xl mx-auto text-white px-6 text-left ps-12">
         {/* Title */}
-        <h1 className="text-5xl font-semibold uppercase tracking-tight transition-all duration-500">
+        <h1 className="text-5xl md:text-[78px] md:pl-[50px] md:pt-[40px] font-semibold uppercase tracking-tight transition-all duration-500">
           {currentSlide.title}
         </h1>
-        <p className="text-2xl font-semibold mb-6 opacity-90">
+        <p className="text-2xl font-semibold mb-6 opacity-90 md:pl-[50px] md:text-[40px] md:-mt-3.5">
           {currentSlide.subtitle}
         </p>
 
-        <button className="bg-white font-normal text-[#02033a] px-10 py-2 rounded-full hover:bg-gray-200 transition-colors cursor-pointer">
+        <button className="bg-white md:ml-[50px] font-normal text-[#02033a] px-7 py-1.5 rounded-full hover:bg-gray-200 transition-colors cursor-pointer">
           {currentSlide.buttonText}
         </button>
       </div>
 
       {/* --- Navigation --- */}
-      <div className="absolute bottom-8 right-0 -translate-x-1/2 flex gap-3 z-20">
+      <div className="absolute bottom-14 right-8 -translate-x-1/2 flex gap-3 z-20">
         {slidesData.map((_, i) => (
           <button
             key={i}
             onClick={() => setIndex(i)}
-            className={`h-2 rounded-xs transition-all duration-500 ${
+            className={`h-1 rounded-xs transition-all duration-500 ${
               index === i ? "bg-white w-10" : "bg-white/40 w-3 hover:bg-white/60"
             }`}
             aria-label={`Go to slide ${i + 1}`}

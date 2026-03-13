@@ -118,7 +118,7 @@ function Header() {
             Contact
           </NavLink>
 
-          <Link to="/"
+          <Link to="/Search"
             className={`font-semibold hover:text-blue-600 py-4 ${scrolled ? "text-gray-800" : "text-black"
               }`}
           >
@@ -128,7 +128,7 @@ function Header() {
 
         {/* --- MOBILE TOGGLE BUTTON --- */}
         <span className="flex gap-2 items-center md:hidden">
-          <Search />
+          <Link to="/Search"><Search /></Link>
           <button
             className={`md:hidden p-2 ${scrolled ? "text-gray-700" : "text-black"
               }`}

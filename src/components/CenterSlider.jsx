@@ -50,14 +50,14 @@ const CenterSlider = () => {
   const displayIndexes = [getIndex(-1), getIndex(0), getIndex(1)];
 
   return (
-    <section style={{ backgroundImage: `url(${centerSliderBg})` }} className="relative w-full py-4 md:py-20  bg-position-[center_top_5rem] md:bg-position-[center_top_9rem] bg-no-repeat bg-size-[100%_150px]">
+    <section style={{ backgroundImage: `url(${centerSliderBg})` }} className="relative w-full py-4 md:py-20  bg-position-[center_top_5rem] md:bg-position-[center_top_9rem] bg-no-repeat bg-size-[100%_150px] mb-32">
       <div className=" max-w-6xl mx-auto  px-4 ">
-        <h2 className="text-4xl font-semibold text-center mb-4 md:mb-16 text-custom-dark font-mori">
+        <h2 className="text-4xl sm:text-5xl font-semibold text-center mb-4 md:mb-16 text-custom-dark font-mori">
           Lorem ipsum dolor
         </h2>
         <div className="">
           <div
-            className="relative flex items-center justify-center h-[300px] md:h-[420px]"
+            className="relative flex items-center justify-center h-[300px] md:h-[400px]"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
@@ -111,13 +111,13 @@ const CenterSlider = () => {
               onClick={prev}
               className="absolute left-4 z-30 transition-all flex items-center justify-center cursor-pointer"
             >
-              <ArrowLeft className="w-8 h-8" />
+              <ArrowLeft className="w-auto h-9" />
             </button>
             <button
               onClick={next}
               className="absolute right-4 z-30 p-3 transition-all flex items-center justify-center cursor-pointer"
             >
-             <ArrowRight className="w-8 h-8" />
+             <ArrowRight className="w-auto h-9" />
             </button>
           </div>
         </div>

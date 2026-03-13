@@ -28,7 +28,7 @@ function HeroSlider() {
 
   return (
     <section
-      className="h-[560px] bg-cover bg-center flex items-center relative transition-all duration-1000 ease-in-out"
+      className="shadow-[0_0_210px_rgb(220,220,220)] h-[560px] bg-cover bg-center flex items-center relative transition-all duration-1000 ease-in-out"
       style={{ backgroundImage: `url(${currentSlide.image})` }}
     >
       {/* Overlay */}

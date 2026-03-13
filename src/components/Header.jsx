@@ -22,7 +22,7 @@ function Header() {
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-md" : "bg-white/60 text-black"
         }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-6 py-2.5 flex justify-between items-center">
         <Link to="/" className="font-bold text-xl">
           <img
             src={logo}
@@ -32,103 +32,134 @@ function Header() {
         </Link>
 
         {/* --- DESKTOP NAV --- */}
-        <nav className="hidden md:flex gap-6 items-center">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              `font-semibold hover:text-blue-600 py-6 transition-colors ${isActive
-                ? "text-blue-600 border-b-0 border-blue-600"
-                : scrolled
-                  ? "text-gray-800"
-                  : "text-black"
-              }`
-            }
-          >
-            Home
-          </NavLink>
+        <nav className="hidden md:flex items-center">
+  <ul className="flex gap-6 items-center list-none p-0 m-0">
+    <li>
+      <NavLink
+        to="/"
+        className={({ isActive }) =>
+          `font-semibold hover:text-blue-600 py-6 transition-colors block ${
+            isActive
+              ? "text-blue-600 border-b-0 border-blue-600"
+              : scrolled
+              ? "text-gray-800"
+              : "text-black"
+          }`
+        }
+      >
+        Home
+      </NavLink>
+    </li>
 
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              `font-semibold hover:text-blue-600 py-6 transition-colors ${isActive
-                ? "text-blue-600 border-b-0 border-blue-600"
-                : scrolled
-                  ? "text-gray-800"
-                  : "text-black"
-              }`
-            }
-          >
-            About
-          </NavLink>
+    <li>
+      <NavLink
+        to="/about"
+        className={({ isActive }) =>
+          `font-semibold hover:text-blue-600 py-6 transition-colors block ${
+            isActive
+              ? "text-blue-600 border-b-0 border-blue-600"
+              : scrolled
+              ? "text-gray-800"
+              : "text-black"
+          }`
+        }
+      >
+        About
+      </NavLink>
+    </li>
 
-          <div
-            onMouseEnter={() => setOpen(true)}
-            onMouseLeave={() => setOpen(false)}
-            className="static"
-          >
-            <span
-              className={`cursor-pointer flex items-center gap-1 font-semibold hover:text-blue-600 py-6 ${scrolled ? "text-gray-800" : "text-black"
-                }`}
-            >
-              Services{" "}
-              <ChevronDown
-                size={16}
-                className={open ? "rotate-180 transition-transform" : ""}
-              />
-            </span>
-            {open && <MegaMenu setOpen={setOpen} />}
-          </div>
+    <li
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+      className="static"
+    >
+      <span
+        className={`cursor-pointer flex items-center gap-1 font-semibold hover:text-blue-600 py-6 ${
+          scrolled ? "text-gray-800" : "text-black"
+        }`}
+      >
+        Services{" "}
+        <ChevronDown
+          size={16}
+          className={open ? "rotate-180 transition-transform" : ""}
+        />
+      </span>
+      {open && <MegaMenu setOpen={setOpen} />}
+    </li>
 
-          <span
-            className={`cursor-pointer font-semibold hover:text-blue-600 py-6 ${scrolled ? "text-gray-800" : "text-black"
-              }`}
-            onClick={() => {}}
-          >
-            Innovations
-          </span>
-          <span
-            className={`cursor-pointer font-semibold hover:text-blue-600 py-6 ${scrolled ? "text-gray-800" : "text-black"
-              }`}
-            onClick={() => {}}
-          >
-            Investors
-          </span>
-          <span
-            className={`cursor-pointer font-semibold hover:text-blue-600 py-6 ${scrolled ? "text-gray-800" : "text-black"
-              }`}
-            onClick={() => {}}
-          >
-            Insights
-          </span>
-          <span
-            className={`cursor-pointer font-semibold hover:text-blue-600 py-6 ${scrolled ? "text-gray-800" : "text-black"
-              }`}
-            onClick={() => {}}
-          >
-            Career
-          </span>
+    <li>
+      <span
+        className={`cursor-pointer font-semibold hover:text-blue-600 py-6 block ${
+          scrolled ? "text-gray-800" : "text-black"
+        }`}
+        onClick={() => {}}
+      >
+        Innovations
+      </span>
+    </li>
 
-          <NavLink
-            to="/contact"
-            className={({ isActive }) =>
-              `font-semibold hover:text-blue-600 py-6 transition-colors ${isActive
-                ? "text-blue-600 border-b-0 border-blue-600"
-                : scrolled
-                  ? "text-gray-800"
-                  : "text-black"
-              }`
-            }
-          >
-            Contact
-          </NavLink>
+    <li>
+      <span
+        className={`cursor-pointer font-semibold hover:text-blue-600 py-6 block ${
+          scrolled ? "text-gray-800" : "text-black"
+        }`}
+        onClick={() => {}}
+      >
+        Investors
+      </span>
+    </li>
 
-          <Link to="/search"
-            className={`font-semibold hover:text-blue-600 py-6 ${scrolled ? "text-gray-800" : "text-black"
-              }`}
-          >
-            <Search />
-          </Link>
-        </nav>
+    <li>
+      <span
+        className={`cursor-pointer font-semibold hover:text-blue-600 py-6 block ${
+          scrolled ? "text-gray-800" : "text-black"
+        }`}
+        onClick={() => {}}
+      >
+        Insights
+      </span>
+    </li>
+
+    <li>
+      <span
+        className={`cursor-pointer font-semibold hover:text-blue-600 py-6 block ${
+          scrolled ? "text-gray-800" : "text-black"
+        }`}
+        onClick={() => {}}
+      >
+        Career
+      </span>
+    </li>
+
+    <li>
+      <NavLink
+        to="/contact"
+        className={({ isActive }) =>
+          `font-semibold hover:text-blue-600 py-6 transition-colors block ${
+            isActive
+              ? "text-blue-600 border-b-0 border-blue-600"
+              : scrolled
+              ? "text-gray-800"
+              : "text-black"
+          }`
+        }
+      >
+        Contact
+      </NavLink>
+    </li>
+
+    <li>
+      <Link
+        to="/search"
+        className={`font-semibold hover:text-blue-600 py-6 block ${
+          scrolled ? "text-gray-800" : "text-black"
+        }`}
+      >
+        <Search />
+      </Link>
+    </li>
+  </ul>
+</nav>
 
         {/* --- MOBILE  --- */}
         <span className="flex gap-2 items-center md:hidden">
